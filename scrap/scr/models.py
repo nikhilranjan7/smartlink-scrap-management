@@ -9,18 +9,22 @@ Department = (
 )
 
 Type = (
-    ('hazardous', 'HAZARDOUS')
-    ('e-waster', 'E-WASTE')
-    ('metals', 'METALS')
-    ('paper', 'PAPER')
-    ('plastic', 'PLASTIC')
+    ('hazardous', 'HAZARDOUS'),
+    ('e-waster', 'E-WASTE'),
+    ('metals', 'METALS'),
+    ('paper', 'PAPER'),
+    ('plastic', 'PLASTIC'),
 )
 
 class Category(models.Model):
-  department = models.CharField(max_length=14,                                                                 choices=COLOR_CHOICES,
+  department = models.CharField(max_length=14, choices=Department,
                  default='rma')
-  waste_type = models.CharField(max_length=14, default='paper')
+  waste_type = models.CharField(max_length=14, choices=Type,
+                 default='paper')
   description = models.CharField(max_length=100)
 
-  def __str__(self):
-      return self.name
+  class Meta:
+      verbose_name_plural = 'Categories'
+
+      def __str__(self):
+          return self.name
