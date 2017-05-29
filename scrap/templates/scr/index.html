@@ -3,23 +3,80 @@
 {% load staticfiles %}
 
 <html>
+	<head>
+		<title>Scrap management portal.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+	</head>
+	<body>
 
-  <head>
-    <title>Scrap Management</title>
-  </head>
+		<!-- Header -->
 
-  <body>
-    <h1>{{ boldmessage }}</h1>
-    <img src="{% static "images/s.jpg" %}"
-                alt="Picture of Smartlink" />
 
-    <div>
-      <a href="/scr/add/">Add Scrap Details</a>
-    </div>
-    <br>
-    <div>
-      <a href="/admin/"><h3>Scrap Committee Login</h3></a>
-    </div>
-  </body>
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Scrap management portal</h1>
 
-</html>
+			</section>
+
+		<!-- One -->
+			<section id="three" class="wrapper special" style="
+    padding-bottom: 20px;
+    padding-top: 20px;
+">
+				<div class="inner">
+					<header class="align-center" style="
+    margin-bottom: 20px;
+">
+						<h2 style="
+    margin-bottom: 0px;
+">Select</h2>
+
+					</header>
+					<div class="flex flex-2">
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+							</div>
+							<header>
+								<h3>Admin Login</h3>
+							</header>
+
+							<footer>
+								<a href="/admin/" class="button special">Login</a>
+							</footer>
+						</article>
+
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/bg.jpg" %}" alt="Pic 02">
+							</div>
+							<header>
+								<h3>Add Scrap</h3>
+							</header>
+
+							<footer>
+								<a href="/scr/add/" class="button special">Add Scrap</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							© Untitled. : <a href="{% static "images/asd.jpg" %}">asd</a>. Images: <a href="{% static "images/asd.jpg" %}">asd</a>.
+						</div>
+
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+
+
+	</div></body></html>
