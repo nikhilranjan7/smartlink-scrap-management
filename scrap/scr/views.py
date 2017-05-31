@@ -9,15 +9,6 @@ def index(request):
 
     return render(request, 'scr/index.html', context=context_dict)
 
-class Scrap_details(FormView):
-    model = Category
-    form_class = MyModelForm
-    template_name = 'scr/add.html'
-    success_url = 'scr/success.html'
-
-    def form_valid(self, form):
-        return HttpResponse("<a href=''>You are wasting so much !!</a>")
-
 def add(request):
     form = MyModelForm()
 
