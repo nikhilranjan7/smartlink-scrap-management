@@ -2,18 +2,18 @@ from django.db import models
 
 
 Department = (
-    ('rma','RMA'),
-    ('production', 'PRODUCTION'),
-    ('warehouse', 'WAREHOUSE'),
-    ('maintenance', 'MAINTENANCE'),
+    ('rma','R.M.A.'),
+    ('production', 'Production'),
+    ('warehouse', 'Warehouse'),
+    ('maintenance', 'Maintenance'),
 )
 
 Type = (
-    ('hazardous', 'HAZARDOUS'),
-    ('e-waster', 'E-WASTE'),
-    ('metals', 'METALS'),
-    ('paper', 'PAPER'),
-    ('plastic', 'PLASTIC'),
+    ('hazardous', 'Hazardous'),
+    ('e-waste', 'e-Waste'),
+    ('metals', 'Metals'),
+    ('paper', 'Paper'),
+    ('plastic', 'Plastic'),
 )
 
 class Category(models.Model):
@@ -28,3 +28,15 @@ class Category(models.Model):
 
   def __str__(self):
       return self.waste_type
+
+
+class quote(models.Model):
+  name = models.CharField(max_length=100)
+  contact_info = models.CharField(max_length=100)
+  item = models.CharField(max_length=100)
+  quantity = models.CharField(max_length=100)
+  price = models.CharField(max_length=100)
+  additional_info = models.CharField(max_length=1000)
+
+  def __str__(self):
+      return self.item
