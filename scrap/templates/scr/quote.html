@@ -1,5 +1,102 @@
-<form action="/your-name/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Add Scrap</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+      <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+    <style type="text/css">
+
+fieldset{
+	border: none;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+}
+input[type="text"],
+textarea,
+select {
+
+	width: 100%;
+
+
+}
+
+.k{
+width: 100%;
+}
+.number {
+	background: #417690;
+	color: #fff;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+
+
+	border-radius: 50px 50px 50px 0px;
+}
+
+
+
+
+</style>
+  </head>
+
+  <body class=" login" data-admin-utc-offset="0">
+
+      <div id="container">
+		    <!-- Header -->
+        <div id="header">
+        <div id="branding">
+
+        <h1 id="site-name">Add Scrap</h1>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+          <div id="content" class="colM">
+              <div id="content-main">
+
+      <form id="Quotation" method="post" action="/scr/quote/">
+
+          {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+		{% for field in form.visible_fields %}
+
+        <br>
+
+              {{ field.errors }}
+          <div class="form-row">
+			  <label>
+              <span class="number"></span>
+
+              {{ field.help_text }}
+              </label>
+
+              <div class="k">{{ field }}</div>
+
+          </div>
+
+        {% endfor %}
+          <div class="submit-row">
+        <input type="submit" name="suit" value="Add" />
+          </div>
+              </div>
+        <div id="footer"></div>
+      </form>
+    </div>
+
+  </body>
+</html>

@@ -30,13 +30,16 @@ class Category(models.Model):
       return self.waste_type
 
 
-class quote(models.Model):
+class Quote(models.Model):
   name = models.CharField(max_length=100)
   contact_info = models.CharField(max_length=100)
   item = models.CharField(max_length=100)
   quantity = models.CharField(max_length=100)
   price = models.CharField(max_length=100)
   additional_info = models.CharField(max_length=1000)
+
+  class Meta:
+      verbose_name_plural = 'Quotes'
 
   def __str__(self):
       return self.item

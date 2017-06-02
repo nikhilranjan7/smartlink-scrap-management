@@ -1,4 +1,4 @@
-from scr.models import Category, quote
+from scr.models import Category, Quote
 from django import forms
 
 Department = (
@@ -36,5 +36,5 @@ class Quotation(forms.ModelForm):
     additional_info = forms.CharField(max_length=1000,help_text="Additional Information")
 
     class Meta:
-        model = quote
+        model = Quote
         fields = ['name', 'contact_info', 'item', 'quantity', 'price', 'additional_info']

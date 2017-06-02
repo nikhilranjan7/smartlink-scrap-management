@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, quote
+from scr.models import Category, Quote
 from django.views.generic import FormView
 from scr.forms import MyModelForm, Quotation
 
@@ -25,16 +25,16 @@ def add(request):
     return render(request, 'scr/add.html', {'form': form})
 
 def quotes(request):
-    form = Quotation()
+    forma = Quotation()
 
     if request.method == 'POST':
-        form = Quotation(request.POST)
+        forma = Quotation(request.POST)
 
-        if form.is_valid():
-            form.save(commit=True)
+        if forma.is_valid():
+            forma.save(commit=True)
             return index(request)
 
         else:
-            print(form.errors)
+            print(forma.errors)
 
-    return render(request, 'scr/quote.html', {'form': form})
+    return render(request, 'scr/quote.html', {'form': forma})
