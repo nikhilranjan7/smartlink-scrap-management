@@ -64,5 +64,5 @@ class Random_f(forms.ModelForm):
     fill = forms.CharField(max_length=100, help_text="Random Things")
 
     class Meta:
-        model = Random
+        model = Random_m
         fields = ['fill']
