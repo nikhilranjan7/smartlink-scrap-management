@@ -38,3 +38,6 @@ def quotes(request):
             print(forma.errors)
 
     return render(request, 'scr/quote.html', {'form': forma})
+
+#def excel(request):
+#    form =
