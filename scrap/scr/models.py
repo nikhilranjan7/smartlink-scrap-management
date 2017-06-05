@@ -64,4 +64,7 @@ class Quote(models.Model):
   def __str__(self):
       return self.item
 
-#class Random(models.Model)
+class Random_m(models.Model):
+    fill = models.CharField(max_length=100)
+    def __str__(self):
+        return self.fill

@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, Quote
+from scr.models import Category, Quote, Random_m
 from django.views.generic import FormView
-from scr.forms import MyModelForm, Quotation
+from scr.forms import MyModelForm, Quotation, Random_f
 
 def index(request):
     context_dict = {'boldmessage': "Scrap Management"}
@@ -39,5 +39,16 @@ def quotes(request):
 
     return render(request, 'scr/quote.html', {'form': forma})
 
-#def excel(request):
-#    form =
+def excel(request):
+    form = Random_f()
+    if request.method == 'POST':
+        form = Random_f(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+            return index(request)
+
+        else:
+            print(form.errors)
+
+    return render(request, 'scr/success.html', {'form': form})

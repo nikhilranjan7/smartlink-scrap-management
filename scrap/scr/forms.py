@@ -1,4 +1,4 @@
-from scr.models import Category, Quote
+from scr.models import Category, Quote, Random_m
 from django import forms
 
 Company = (
@@ -59,3 +59,10 @@ class Quotation(forms.ModelForm):
     class Meta:
         model = Quote
         fields = ['name', 'contact_info', 'item', 'quantity', 'price', 'additional_info']
+
+class Random_f(forms.ModelForm):
+    fill = forms.CharField(max_length=100, help_text="Random Things")
+
+    class Meta:
+        model = Random
+        fields = ['fill']
