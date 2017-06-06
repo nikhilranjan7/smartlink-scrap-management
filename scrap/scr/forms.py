@@ -65,4 +65,4 @@ class Random_f(forms.ModelForm):
 
     class Meta:
         model = Random_m
-        fields = ['fill']
+        fields = ['fill',]

@@ -1,0 +1,14 @@
+id,company,department,waste_type,description
+1,it,production,paper,15 Kg
+2,it,rma,plastic,11 kg
+3,it,warehouse,metals,3 kg Iron Rods
+4,it,production,e-waster,5 Waste PC
+5,it,rma,paper,hiohi
+6,it,rma,hazardous,asdf
+7,it,rma,hazardous,sdf
+8,it,rma,hazardous,asdf
+9,it,rma,e-waster,fdgjfgkj
+10,it,rma,hazardous,sss
+11,it,rma,hazardous,random
+12,it,rma,hazardous,aa
+13,Smartlink Network Systems Ltd.,hr & admin,aging material,Nothing

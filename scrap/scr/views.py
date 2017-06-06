@@ -40,31 +40,10 @@ def quotes(request):
     return render(request, 'scr/quote.html', {'form': forma})
 
 def excel(request):
-    form = Random_f()
-    if request.method == 'POST':
-        form = Random_f(request.POST)
+    from scr.admin import Category_list
+    dataset = Category_list().export()
 
-        if form.is_valid():
-            form.save(commit=True)
-
-            import requests, sys, webbrowser, bs4
-
-            print('Googling...')
-            res = requests.get('https://google.com/search?q=Smartlink')
-            res.raise_for_status()
-
-            # Retrieve top search result links.
-            soup = bs4.BeautifulSoup(res.text, "html.parser")
-
-            # Open a browser tab for each result.
-            linkElems = soup.select('.r a')
-            numOpen = min(5, len(linkElems))
-            for i in range(numOpen):
-                webbrowser.open('https://google.com/' + linkElems[i].get('href'))
-                
-            return render(request, 'scr/success.html', {'form': form})
-
-        else:
-            print(form.errors)
-
-    return render(request, 'scr/success.html', {'form': form})
+    f = open('/Users/nikhilranjan/Desktop/smartlink/scrap/static/xl/a.csv','w')
+    f.write(dataset.csv)
+    t = 'static/xl/a.csv'
+    return render(request, t)

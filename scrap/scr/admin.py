@@ -20,5 +20,6 @@ class Quote_list(resources.ModelResource):
     class Meta:
         model = Quote
 
+
 class CategoryAdmin(ImportExportModelAdmin):
     resource_class = Quote_list

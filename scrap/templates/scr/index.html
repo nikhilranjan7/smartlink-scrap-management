@@ -35,7 +35,7 @@
 
 					</header>
 					<div class="flex flex-3">
-					
+
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
@@ -49,7 +49,7 @@
 							</footer>
 							</span>
 						</article>
-						
+
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
@@ -74,7 +74,7 @@
 							</article>
 							</span>
 						</article>
-						
+
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
@@ -88,17 +88,18 @@
 								<a href="/scr/add" class="button special">Add</a>
 								</footer>
 							</article>
-
+{% if user.is_authenticated %}
 							<article>
 								<header>
 								<h3>Export .xls</h3>
 								</header>
 								<footer>
-								<a href="" class="button special">Export</a>
+								<a href="/scr/success/" class="button special">Export</a>
 								</footer>
 							</article>
 							</span>
 						</article>
+	{% endif %}
 						</span>
 					</div>
 				</div>
