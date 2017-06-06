@@ -45,5 +45,6 @@ def excel(request):
 
     f = open('/Users/nikhilranjan/Desktop/smartlink/scrap/static/xl/a.csv','w')
     f.write(dataset.csv)
-    t = 'static/xl/a.csv'
-    return render(request, t)
+    t = 'http://127.0.0.1:8000/static/xl/a.csv'
+    f.close()
+    return render(request, 'scr/success.html')
