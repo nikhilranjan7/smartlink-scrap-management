@@ -43,7 +43,9 @@ def excel(request):
     from scr.admin import Category_list
     dataset = Category_list().export()
 
-    f = open('/Users/nikhilranjan/Desktop/smartlink/scrap/static/xl/a.csv','w')
+    f = open('a.csv','w')
     f.write(dataset.csv)
-    t = 'static/xl/a.csv'
+    t = 'static\\xl\\a.csv'
+    f.close()
     return render(request, t)
+
