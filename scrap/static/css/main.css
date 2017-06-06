@@ -1901,12 +1901,13 @@
 	}
 
 		.flex.flex-2 article {
-			width: 47%;
-		}
+			width: 45%;
+			margin: auto;		}
+
 
 		.flex.flex-3 article {
 			position: relative;
-			width: 28%;
+			width: 30%;
 		}
 
 			.flex.flex-3 article:before {
@@ -1933,10 +1934,15 @@
 			.flex.flex-2 article {
 				width: 100%;
 				margin-bottom: 3em;
+
+			}
+
+			.yolo {
+				margin: auto;
 			}
 
 				.flex.flex-2 article:last-child {
-					margin-bottom: 0;
+					margin-left: 10px;
 				}
 
 			.flex.flex-3 {
@@ -2934,7 +2940,7 @@
 
 	#banner {
 		padding: 12em 0 10em 0;
-		background-image: url('../images/banner.jpg');
+		background-image: url('../../static/images/banner.jpg');
 		background-size: cover;
 		background-position: top;
 		background-attachment: fixed;
