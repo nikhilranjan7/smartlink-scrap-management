@@ -1,6 +1,12 @@
 from scr.models import Category, Quote, Random_m
 from django import forms
 
+Location = (
+    ('goa','Goa'),
+    ('mumbai','Mumbai'),
+    ('bangalore','Bangalore'),
+)
+
 Company = (
     ('Smartlink Network Systems Ltd.','Smartlink Network Systems Ltd.'),
     ('Digisol Systems Ltd.', 'Digisol Systems Ltd.'),
@@ -36,6 +42,8 @@ Type = (
 )
 
 class MyModelForm(forms.ModelForm):
+    location = forms.ChoiceField(choices=Location,
+                 help_text="Location")
     company = forms.ChoiceField(choices=Company,
                  required=True, help_text="Company")
     department = forms.ChoiceField(choices=Department,required=True,
@@ -49,6 +57,8 @@ class MyModelForm(forms.ModelForm):
         fields = ['company','department', 'waste_type', 'description']
 
 class Quotation(forms.ModelForm):
+    location = forms.ChoiceField(choices=Location,
+                 help_text="Location of the Scrap generating Company")
     name = forms.CharField(max_length=100,required=True,help_text="Name")
     contact_info = forms.CharField(max_length=100,required=True,help_text="Contact Information")
     item = forms.CharField(max_length=100,required=True,help_text="Item")

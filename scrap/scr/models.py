@@ -1,5 +1,11 @@
 from django.db import models
 
+Location = (
+    ('goa','Goa'),
+    ('mumbai','Mumbai'),
+    ('bangalore','Bangalore'),
+)
+
 Company = (
     ('Smartlink Network Systems Ltd.','Smartlink Network Systems Ltd.'),
     ('Digisol Systems Ltd.', 'Digisol Systems Ltd.'),
@@ -35,6 +41,8 @@ Type = (
 )
 
 class Category(models.Model):
+  location = models.CharField(max_length=100, choices=Location,
+               default='goa')
   company = models.CharField(max_length=100, choices=Company,
                default='it')
   department = models.CharField(max_length=100, choices=Department,
@@ -51,6 +59,8 @@ class Category(models.Model):
 
 
 class Quote(models.Model):
+  location = models.CharField(max_length=100, choices=Location,
+               default='goa')
   name = models.CharField(max_length=100)
   contact_info = models.CharField(max_length=100)
   item = models.CharField(max_length=100)
