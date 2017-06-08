@@ -16,7 +16,7 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<h1>Scrap management portal</h1>
+				<img src="{% static "images/head.png" %}" alt="head" width="100%">
 
 			</section>
 
@@ -29,9 +29,7 @@
 					<header class="align-center" style="
     margin-bottom: 20px;
 ">
-						<h2 style="
-    margin-bottom: 0px;
-">Select</h2>
+						<img src="{% static "images/select1.png" %}" alt="select" height="150px">
 
 					</header>
 					{% if user.is_authenticated %}
@@ -39,21 +37,34 @@
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/Admin.png" %}" alt="login">
 							</div>
-							<span class="yolo">
-							<header>
-								<h3>Admin Login</h3>
-							</header>
-							<footer>
-								<a href="/admin/" class="button special">Login</a>
-							</footer>
+							
+							<span class="flex flex-2">
+							<article>
+								<header>
+									<h3>Portal</h3>
+								</header>
+								<footer>
+									<a href="/admin/" class="button special">Open</a>
+								</footer>
+							</article>
+
+							<article>
+								<header>
+								<h3>Logout</h3>
+								</header>
+								<footer>
+								<a href="/admin/logout" class="button special">Logout</a>
+								</footer>
+							</article>
 							</span>
+							
 						</article>
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/quote.png" %}" alt="quote">
 							</div>
 							<span class="flex flex-2">
 							<article>
@@ -78,7 +89,7 @@
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/scrap.png" %}" alt="scrap">
 							</div>
 							<span class="flex flex-2">
 							<article>
@@ -110,21 +121,21 @@
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/login.png" %}" alt="login">
 							</div>
-							<span class="yolo">
+							
 							<header>
 								<h3>Admin Login</h3>
 							</header>
 							<footer>
 								<a href="/admin/" class="button special">Login</a>
 							</footer>
-							</span>
+							
 						</article>
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/quote.png" %}" alt="quote">
 							</div>
 
 
@@ -140,7 +151,7 @@
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/scrap.png" %}" alt="scrap">
 							</div>
 
 							<article>
