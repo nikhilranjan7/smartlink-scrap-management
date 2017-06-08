@@ -45,6 +45,14 @@ def excel(request):
 
     f = open('/Users/nikhilranjan/Desktop/smartlink/scrap/static/xl/a.csv','w')
     f.write(dataset.csv)
-    t = 'http://127.0.0.1:8000/static/xl/a.csv'
     f.close()
     return render(request, 'scr/success.html')
+
+def exce(request):
+    from scr.admin import Quote_list
+    dataset = Quote_list().export()
+
+    f = open('/Users/nikhilranjan/Desktop/smartlink/scrap/static/xl/b.csv','w')
+    f.write(dataset.csv)
+    f.close()
+    return render(request, 'scr/q.html')

@@ -6,4 +6,5 @@ urlpatterns = [
 	url(r'^add/$', views.add, name='add'),
 	url(r'^quote/$', views.quotes, name='quota'),
     url(r'^success/$', views.excel, name='exa'),
+    url(r'^q/$', views.exce, name='exe'),
 ]
