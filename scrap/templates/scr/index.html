@@ -16,7 +16,7 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<h1>Scrap management portal</h1>
+				<img src="{% static "images/head.png" %}" alt="head" width="100%">
 
 			</section>
 
@@ -29,30 +29,42 @@
 					<header class="align-center" style="
     margin-bottom: 20px;
 ">
-						<h2 style="
-    margin-bottom: 0px;
-">Select</h2>
+						<img src="{% static "images/select1.png" %}" alt="select" height="150px">
 
 					</header>
+					{% if user.is_authenticated %}
 					<div class="flex flex-3">
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/Admin.png" %}" alt="login">
 							</div>
-							<span class="yolo">
-							<header>
-								<h3>Admin Login</h3>
-							</header>
-							<footer>
-								<a href="/admin/" class="button special">Login</a>
-							</footer>
+							
+							<span class="flex flex-2">
+							<article>
+								<header>
+									<h3>Portal</h3>
+								</header>
+								<footer>
+									<a href="/admin/" class="button special">Open</a>
+								</footer>
+							</article>
+
+							<article>
+								<header>
+								<h3>Logout</h3>
+								</header>
+								<footer>
+								<a href="/admin/logout" class="button special">Logout</a>
+								</footer>
+							</article>
 							</span>
+							
 						</article>
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/quote.png" %}" alt="quote">
 							</div>
 							<span class="flex flex-2">
 							<article>
@@ -69,7 +81,7 @@
 								<h3>Export .xls</h3>
 								</header>
 								<footer>
-								<a href="" class="button special">Export</a>
+								<a href="/scr/q" class="button special">Export</a>
 								</footer>
 							</article>
 							</span>
@@ -77,7 +89,7 @@
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+								<img src="{% static "images/scrap.png" %}" alt="scrap">
 							</div>
 							<span class="flex flex-2">
 							<article>
@@ -88,7 +100,7 @@
 								<a href="/scr/add" class="button special">Add</a>
 								</footer>
 							</article>
-{% if user.is_authenticated %}
+
 							<article>
 								<header>
 								<h3>Export .xls</h3>
@@ -99,11 +111,67 @@
 							</article>
 							</span>
 						</article>
-	{% endif %}
+
 						</span>
 					</div>
 				</div>
 			</section>
+			{% else %}
+			<div class="flex flex-3">
+
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/login.png" %}" alt="login">
+							</div>
+							
+							<header>
+								<h3>Admin Login</h3>
+							</header>
+							<footer>
+								<a href="/admin/" class="button special">Login</a>
+							</footer>
+							
+						</article>
+
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/quote.png" %}" alt="quote">
+							</div>
+
+
+								<header>
+								<h3>Add Quote</h3>
+								</header>
+								<footer>
+								<a href="/scr/quote" class="button special">Add</a>
+								</footer>
+							</article>
+
+
+
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/scrap.png" %}" alt="scrap">
+							</div>
+
+							<article>
+								<header>
+								<h3>Add Scrap</h3>
+								</header>
+								<footer>
+								<a href="/scr/add" class="button special">Add</a>
+								</footer>
+							</article>
+
+
+							</span>
+						</article>
+
+						</span>
+					</div>
+				</div>
+			</section>
+			{% endif %}
 
 		<!-- Footer -->
 			<footer id="footer">
