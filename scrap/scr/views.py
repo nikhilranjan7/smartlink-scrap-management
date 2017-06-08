@@ -44,7 +44,6 @@ def excel(request):
     from scr.admin import Category_list
     import os
     dataset = Category_list().export()
-    os.chdir('..')
     sta = os.getcwd() + '/static/xl/a.csv'
     f = open(sta,'w')
     f.write(dataset.csv)
@@ -54,7 +53,6 @@ def excel(request):
 def exce(request):
     from scr.admin import Quote_list
     dataset = Quote_list().export()
-    os.chdir('..')
     sta = os.getcwd() + '/static/xl/b.csv'
     f = open(sta,'w')
     f.write(dataset.csv)
