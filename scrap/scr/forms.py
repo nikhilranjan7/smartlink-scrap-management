@@ -1,4 +1,4 @@
-from scr.models import Category, Quote, Random_m
+from scr.models import Category, Quote
 from django import forms
 
 Location = (
@@ -42,6 +42,7 @@ Type = (
 )
 
 class MyModelForm(forms.ModelForm):
+    time = forms.CharField(widget=forms.HiddenInput(), required=False)
     location = forms.ChoiceField(choices=Location,
                  help_text="Location")
     company = forms.ChoiceField(choices=Company,
@@ -54,9 +55,10 @@ class MyModelForm(forms.ModelForm):
                                     help_text="Description")
     class Meta:
         model = Category
-        fields = ['company','department', 'waste_type', 'description']
+        fields = ['company','department', 'waste_type', 'description','location','time']
 
 class Quotation(forms.ModelForm):
+    time = forms.CharField(widget=forms.HiddenInput(), required=False)
     location = forms.ChoiceField(choices=Location,
                  help_text="Location of the Scrap generating Company")
     name = forms.CharField(max_length=100,required=True,help_text="Name")
@@ -65,14 +67,8 @@ class Quotation(forms.ModelForm):
     quantity = forms.CharField(max_length=100,required=True,help_text="Quantity")
     price = forms.CharField(max_length=100,required=True,help_text="Price quoted")
     additional_info = forms.CharField(max_length=1000,help_text="Additional Information")
+    certificates = forms.URLField(max_length=200, help_text="Google drive link to your authorized license", required=False)
 
     class Meta:
         model = Quote
-        fields = ['name', 'contact_info', 'item', 'quantity', 'price', 'additional_info']
-
-class Random_f(forms.ModelForm):
-    fill = forms.CharField(max_length=100, help_text="Random Things")
-
-    class Meta:
-        model = Random_m
-        fields = ['fill',]
+        fields = ['name', 'contact_info', 'item', 'quantity', 'price', 'additional_info','location', 'time', 'certificates']

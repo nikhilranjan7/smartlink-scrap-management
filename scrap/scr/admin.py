@@ -1,5 +1,5 @@
 from django.contrib import admin
-from scr.models import Category, Quote, Random_m
+from scr.models import Category, Quote
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 

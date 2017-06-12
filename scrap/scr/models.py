@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 Location = (
     ('goa','Goa'),
@@ -41,6 +42,9 @@ Type = (
 )
 
 class Category(models.Model):
+  a = datetime.datetime.now()
+  a = a.strftime("%d/%m/%y")
+  time = models.CharField(max_length=20, default=a)
   location = models.CharField(max_length=100, choices=Location,
                default='goa')
   company = models.CharField(max_length=100, choices=Company,
@@ -59,6 +63,9 @@ class Category(models.Model):
 
 
 class Quote(models.Model):
+  a = datetime.datetime.now()
+  a = a.strftime("%d/%m/%y")
+  time = models.CharField(max_length=20, default=a)
   location = models.CharField(max_length=100, choices=Location,
                default='goa')
   name = models.CharField(max_length=100)
@@ -67,14 +74,10 @@ class Quote(models.Model):
   quantity = models.CharField(max_length=100)
   price = models.CharField(max_length=100)
   additional_info = models.CharField(max_length=1000)
+  certificates = models.URLField(default='null')
 
   class Meta:
       verbose_name_plural = 'Quotes'
 
   def __str__(self):
       return self.item
-
-class Random_m(models.Model):
-    fill = models.CharField(max_length=100, default='aa')
-    def __str__(self):
-        return self.fill

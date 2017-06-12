@@ -1,9 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, Quote, Random_m
+from scr.models import Category, Quote
 from django.views.generic import FormView
-from scr.forms import MyModelForm, Quotation, Random_f
-import os
+from scr.forms import MyModelForm, Quotation
+import os, shutil
+import threading, time
+
+def dela():
+    sta = os.getcwd() + '/static/xl/'
+    shutil.rmtree(path)
 
 def index(request):
     context_dict = {'boldmessage': "Scrap Management"}
@@ -42,12 +47,13 @@ def quotes(request):
 
 def excel(request):
     from scr.admin import Category_list
-    import os
     dataset = Category_list().export()
     sta = os.getcwd() + '/static/xl/a.csv'
     f = open(sta,'w')
     f.write(dataset.csv)
     f.close()
+    threadObj = threading.Thread(target=dela)
+    threadObj.start()
     return render(request, 'scr/success.html')
 
 def exce(request):
@@ -57,4 +63,6 @@ def exce(request):
     f = open(sta,'w')
     f.write(dataset.csv)
     f.close()
+    threadObj = threading.Thread(target=dela)
+    threadObj.start()
     return render(request, 'scr/q.html')
