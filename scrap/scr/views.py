@@ -7,8 +7,20 @@ import os, shutil
 import threading, time
 
 def dela():
-    sta = os.getcwd() + '/static/xl/'
-    shutil.rmtree(path)
+    time.sleep(10)
+    pat_1 = os.getcwd() + '/static/xl/a.csv'
+    pat_2 = os.getcwd() + '/static/xl/b.csv'
+    try:
+        os.remove(pat_1)
+        print('a.csv deleted')
+    except:
+        print('a.csv not found')
+
+    try:
+        os.remove(pat_2)
+        print('b.csv deleted')
+    except:
+        print('b.csv not found')
 
 def index(request):
     context_dict = {'boldmessage': "Scrap Management"}
