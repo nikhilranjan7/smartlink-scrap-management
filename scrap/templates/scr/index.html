@@ -31,12 +31,13 @@
 ">
 
 					</header>
+
 					{% if user.is_authenticated %}
 					<div class="flex flex-3">
 
 						<article>
 							<div class="image fit">
-								<img src="{% static "images/Admin.png" %}" alt="login">
+								<img src="{% static "images/admin.png" %}" alt="admin">
 							</div>
 
 							<span class="flex flex-2">
@@ -61,10 +62,15 @@
 
 						</article>
 
+
+					<div class="flex flex-3">
+
+
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/quote.png" %}" alt="quote">
 							</div>
+
 							<span class="flex flex-2">
 							<article>
 								<header>
@@ -123,6 +129,9 @@
 								<img src="{% static "images/login.png" %}" alt="login">
 							</div>
 
+
+							<span class="yolo">
+
 							<header>
 								<h3>Admin Login</h3>
 							</header>
@@ -130,13 +139,24 @@
 								<a href="/admin/" class="button special">Login</a>
 							</footer>
 
+
+
+							</span>
+
 						</article>
 
 						<article>
 							<div class="image fit">
+
 								<img src="{% static "images/quote.png" %}" alt="quote">
 							</div>
 
+
+
+								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+							</div>
+							<span class="flex flex-2">
+							<article>
 
 								<header>
 								<h3>Add Quote</h3>
@@ -148,10 +168,28 @@
 
 
 
+
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/scrap.png" %}" alt="scrap">
 							</div>
+
+							<article>
+								<header>
+								<h3>Export .xls</h3>
+								</header>
+								<footer>
+								<a href="" class="button special">Export</a>
+								</footer>
+							</article>
+							</span>
+						</article>
+
+						<article>
+							<div class="image fit">
+								<img src="{% static "images/bg.jpg" %}" alt="Pic 01">
+							</div>
+							<span class="flex flex-2">
 
 							<article>
 								<header>
@@ -163,6 +201,7 @@
 							</article>
 
 
+
 							</span>
 						</article>
 
@@ -171,13 +210,67 @@
 				</div>
 			</section>
 			{% endif %}
+			<br><br>
+
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>Scrap Committee</h2>
+						<p>Members</p>
+					</header>
+					<div class="flex flex-4">
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "images/smartboy.png" %}" alt="Person 1" />
+							</div>
+							<h3>Name</h3>
+							<p>Post</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "images/smartboy.png" %}" alt="Person 2" />
+							</div>
+							<h3>Name</h3>
+							<p>Post</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "images/smartboy.png" %}" alt="Person 3" />
+							</div>
+							<h3>Name</h3>
+							<p>Post</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "images/smartboy.png" %}" alt="Person 4" />
+							</div>
+							<h3>Name</h3>
+							<p>Post</p>
+						</div>
+
+							<article>
+								<header>
+								<h3>Export .xls</h3>
+								</header>
+								<footer>
+								<a href="" class="button special">Export</a>
+								</footer>
+							</article>
+							</span>
+						</article>
+						</span>
+					</div>
+				</div>
+			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="flex">
 						<div class="copyright">
-							© Untitled. : <a href="{% static "images/asd.jpg" %}">asd</a>. Images: <a href="{% static "images/asd.jpg" %}">asd</a>.
+							© Smartlink Network Systems Ltd.<br>
+							Made by: Garv Sachdeva & Nikhil Ranjan
+
 						</div>
 
 					</div>
