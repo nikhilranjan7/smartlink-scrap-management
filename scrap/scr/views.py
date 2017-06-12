@@ -3,7 +3,7 @@ from django.shortcuts import render
 from scr.models import Category, Quote
 from django.views.generic import FormView
 from scr.forms import MyModelForm, Quotation
-import os, shutil
+import os
 import threading, time
 
 def dela():
