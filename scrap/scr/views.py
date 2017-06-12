@@ -7,7 +7,7 @@ import os
 import threading, time
 
 def dela():
-    time.sleep(10)
+    time.sleep(1)
     pat_1 = os.getcwd() + '/static/xl/a.csv'
     pat_2 = os.getcwd() + '/static/xl/b.csv'
     try:
