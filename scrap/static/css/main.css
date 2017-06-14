@@ -1784,7 +1784,7 @@
 		}
 
 	section.wrapper, article.wrapper {
-		padding: 6em 0;
+		padding: 2em 0;
 	}
 
 		section.wrapper header, article.wrapper header {
@@ -1824,7 +1824,7 @@
 		@media screen and (max-width: 980px) {
 
 			section.wrapper, article.wrapper {
-				padding: 2em 0;
+				padding: 1em 0;
 			}
 
 		}
