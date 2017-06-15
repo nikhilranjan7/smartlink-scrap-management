@@ -1,4 +1,4 @@
-from scr.models import Category, Quote
+from scr.models import Category, Quote, Chat_m
 from django import forms
 
 Location = (
@@ -72,3 +72,16 @@ class Quotation(forms.ModelForm):
     class Meta:
         model = Quote
         fields = ['name', 'contact_info', 'item', 'quantity', 'price', 'additional_info','location', 'time', 'certificates']
+
+
+
+
+## Chat Bot Purpose
+
+
+class Chat_f(forms.ModelForm):
+    say = forms.CharField(max_length=100,required=True,help_text="Say Anything")
+
+    class Meta:
+        model = Chat_m
+        fields = ['say']

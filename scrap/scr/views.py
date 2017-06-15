@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, Quote
+from scr.models import Category, Quote, Chat_m
 from django.views.generic import FormView
-from scr.forms import MyModelForm, Quotation
+from scr.forms import MyModelForm, Quotation, Chat_f
 import os
 import threading, time
+import random
 
 def dela():
     time.sleep(1)
@@ -47,7 +48,6 @@ def quotes(request):
 
     if request.method == 'POST':
         forma = Quotation(request.POST)
-
         if forma.is_valid():
             forma.save(commit=True)
             return index(request)
@@ -78,3 +78,38 @@ def exce(request):
     threadObj = threading.Thread(target=dela)
     threadObj.start()
     return render(request, 'scr/q.html')
+
+
+
+
+## Chat Bot Related
+
+GREETING_KEYWORDS = ("hello", "hi", "greetings", "sup", "what's up",)
+
+GREETING_RESPONSES = ["'sup bro", "hey", "*nods*", "hey you get my snap?"]
+
+def check_for_greeting(sentence):
+    """If any of the words in the user's input was a greeting, return a greeting response"""
+    word = sentence
+    if word.lower() in GREETING_KEYWORDS:
+        return random.choice(GREETING_RESPONSES)
+    else:
+        return ('Greet me')
+
+def chat(request):
+    form = Chat_f()
+    b = {'line':''}
+    b['form'] = form
+    if request.method == 'POST':
+        form = Chat_f(request.POST)
+        if form.is_valid():
+            a = request.POST
+            sentence = a['say']
+            b['line'] = check_for_greeting(sentence)
+            form.save(commit=True)
+            return render(request, 'scr/chat.html',b)
+
+        else:
+            print(form.errors)
+
+    return render(request, 'scr/chat.html',b)
