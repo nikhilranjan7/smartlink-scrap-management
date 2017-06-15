@@ -81,3 +81,10 @@ class Quote(models.Model):
 
   def __str__(self):
       return self.item
+
+
+class Chat_m(models.Model):
+    say = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.item
