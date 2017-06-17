@@ -107,7 +107,18 @@ def chat(request):
             a = request.POST
             sentence = a['say']
             url = 'https://www.cleverbot.com/getreply?key=CC2t07lcW2fy6TxXWiafkQ_aiFg&input='+sentence
-            r = requests.get(url)
+            page = ''
+            while page == '':
+                try:
+                    page = requests.get(url)
+                except:
+                    print("Connection refused by the server..")
+                    print("Let me sleep for 5 seconds")
+                    print("ZZzzzz...")
+                    time.sleep(5)
+                    print("Was a nice sleep, now let me continue...")
+                    continue
+            r = page
             b['line'] = r.json()['output']
             form.save(commit=True)
             return render(request, 'scr/chat.html',b)
