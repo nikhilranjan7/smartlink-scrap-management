@@ -6,6 +6,7 @@ from scr.forms import MyModelForm, Quotation, Chat_f
 import os
 import threading, time
 import random
+import requests
 
 def dela():
     time.sleep(1)
@@ -105,7 +106,9 @@ def chat(request):
         if form.is_valid():
             a = request.POST
             sentence = a['say']
-            b['line'] = check_for_greeting(sentence)
+            url = 'https://www.cleverbot.com/getreply?key=CC2t07lcW2fy6TxXWiafkQ_aiFg&input='+sentence
+            r = requests.get(url)
+            b['line'] = r.json()['output']
             form.save(commit=True)
             return render(request, 'scr/chat.html',b)
 
