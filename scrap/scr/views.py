@@ -9,9 +9,10 @@ import random
 import requests
 
 def dela():
-    time.sleep(1)
+    time.sleep(30)
     pat_1 = os.getcwd() + '/static/xl/a.csv'
     pat_2 = os.getcwd() + '/static/xl/b.csv'
+    pat_3 = os.getcwd() + '/static/xl/c.csv'
     try:
         os.remove(pat_1)
         print('a.csv deleted')
@@ -23,6 +24,12 @@ def dela():
         print('b.csv deleted')
     except:
         print('b.csv not found')
+
+    try:
+        os.remove(pat_3)
+        print('c.csv deleted')
+    except:
+        print('c.csv not found')
 
 def index(request):
     context_dict = {'boldmessage': "Scrap Management"}
@@ -79,6 +86,17 @@ def exce(request):
     threadObj = threading.Thread(target=dela)
     threadObj.start()
     return render(request, 'scr/q.html')
+
+def exc(request):
+    from scr.admin import trx_list
+    dataset = trx_list().export()
+    sta = os.getcwd() + '/static/xl/c.csv'
+    f = open(sta,'w')
+    f.write(dataset.csv)
+    f.close()
+    threadObj = threading.Thread(target=dela)
+    threadObj.start()
+    return render(request, 'scr/trx.html')
 '''
 def handler404(request):
     response = render_to_response('404.html', {}, context_instance=RequestContext(request))

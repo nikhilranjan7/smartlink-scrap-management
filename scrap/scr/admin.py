@@ -1,5 +1,5 @@
 from django.contrib import admin
-from scr.models import Category, Quote
+from scr.models import Category, Quote, trxn_m
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
@@ -12,14 +12,12 @@ class Category_list(resources.ModelResource):
     class Meta:
         model = Category
 
-class CategoryAdmin(ImportExportModelAdmin):
-    resource_class = Category_list
-
 class Quote_list(resources.ModelResource):
 
     class Meta:
         model = Quote
 
+class trx_list(resources.ModelResource):
 
-class CategoryAdmin(ImportExportModelAdmin):
-    resource_class = Quote_list
+    class Meta:
+        model = trxn_m

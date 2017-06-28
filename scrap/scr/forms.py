@@ -77,10 +77,8 @@ class Quotation(forms.ModelForm):
 
 
 class trxn_f(forms.ModelForm):
-
-    a = datetime.datetime.now()
-    a = a.strftime("%d/%m/%y")
-    date = forms.DateField(initial=a, help_text="Date")
+    
+    date = forms.DateField(initial=datetime.date.today, help_text="Date")
     location = forms.ChoiceField(choices=Location,
                help_text="Location of the Scrap generating Company")
     items_description = forms.CharField(max_length=1000,help_text="Item Description", widget=forms.Textarea(attrs={'rows':'5', 'width': '100%'}))

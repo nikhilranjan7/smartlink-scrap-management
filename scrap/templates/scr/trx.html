@@ -1,0 +1,5 @@
+{% load staticfiles %}
+
+{% if user.is_authenticated %}
+ <a href="{% static "xl/c.csv" %}">Download</a>
+{% endif %}

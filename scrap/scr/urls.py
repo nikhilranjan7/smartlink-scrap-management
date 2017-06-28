@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^q/$', views.exce, name='exe'),
     url(r'^chat/$', views.chat, name='chat'),
     url(r'^trxn/$', views.trxn, name='trxn'),
+    url(r'^trx/$', views.exc, name='trx'),
 ]
