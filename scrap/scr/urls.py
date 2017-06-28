@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^success/$', views.excel, name='exa'),
     url(r'^q/$', views.exce, name='exe'),
     url(r'^chat/$', views.chat, name='chat'),
+    url(r'^trxn/$', views.trxn, name='trxn'),
 ]

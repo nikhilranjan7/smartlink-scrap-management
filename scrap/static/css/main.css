@@ -1901,7 +1901,7 @@
 	}
 
 		.flex.flex-2 article {
-			width: 45%;
+			width: 33%;
 			margin: auto;		}
 
 
@@ -1932,8 +1932,9 @@
 		@media screen and (max-width: 980px) {
 
 			.flex.flex-2 article {
-				width: 100%;
+				width: 45%;
 				margin-bottom: 3em;
+
 
 			}
 
@@ -2719,16 +2720,22 @@
 /* Header */
 
 	.subpage {
-		padding-top: 44px;
+		padding-top: 55px;
+		border-top: 0.5em;
 	}
 
 		.subpage #header {
+			transition: all 0.5s ease;
 			background: #5385c1;
 			top: 0;
-			height: 44px;
-			line-height: 44px;
+			height: 58px;
+			line-height: 45px;
 			position: fixed;
+			border-top-width:  3px;
+			border-style: solid;
+    		border-color: #1010c1;
 		}
+		
 
 	#header {
 		color: #d4e0ef;
@@ -2749,38 +2756,49 @@
 		}
 
 		#header .logo {
+			transition: border-color 0.2s ease-out;
 			color: #ffffff;
 			display: inline-block;
 			font-weight: 600;
 			height: inherit;
 			left: 0;
 			line-height: inherit;
-			margin: 0;
-			padding: 0;
+			margin: auto;
+			padding-right:15px;
+			padding-left:15px;
 			position: absolute;
-			top: 0;
-			font-size: 1em;
+			font-size: 1.3em;
+			border-bottom: 3px solid #5385c1;
+			top:7.5px;
 		}
+		#header .logo:hover {
+				
+				border-color: #ffffff;
+			}
 
 		#header a {
-			-moz-transition: color 0.2s ease-in-out;
-			-webkit-transition: color 0.2s ease-in-out;
-			-ms-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
+			transition: all 0.3s ease-in-out;
 			display: inline-block;
 			padding: 0 0.75em;
-			color: inherit;
+			height: inherit;
+			left: 0;
+			line-height: inherit;
+			margin: auto;
+			top:8px;
+			padding-top:7.5px;
+			line-height: inherit;
 			text-decoration: none;
-			font-size: .8em;
+			font-size: 1.1em;
+			color: #ffffff;
+			border-bottom: 3px solid #5385c1;
+
 		}
 
 			#header a:hover {
-				color: #ffffff;
+				border-color: #ffffff;
 			}
 
-			#header a:last-child {
-				padding-right: 0;
-			}
+			
 
 			#header a.navPanelToggle {
 				display: none;
@@ -2791,7 +2809,7 @@
 			}
 
 				#header a.navPanelToggle .fa {
-					font-size: 1.25em;
+					font-size: 3.25em;
 				}
 
 				@media screen and (max-width: 980px) {
@@ -2940,14 +2958,14 @@
 /* Banner */
 
 	#banner {
-		padding: 12em 0 10em 0;
+		padding: 7em 0 7em 0;
 		background-image: url('../../static/images/banner.jpg');
 		background-size: cover;
 		background-position: top;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		text-align: center;
-		border-top: 0.5em solid #5385c1;
+		
 	}
 
 		#banner h1 {

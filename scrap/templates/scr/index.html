@@ -10,10 +10,28 @@
 		<link rel="stylesheet" href="{% static "css/main.css" %}" />
 		
 	</head>
-	<body>
+	<body class="subpage">
+	<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<nav id="nav">
+					<span class="logo">Smart Link</span>
+					{% if user.is_authenticated %}
+						<a href="/admin/">Portal</a>
+						<a href="/admin/logout">Logout</a>
+					{% else %}
+						<a href="/admin/">Login</a>
+					{% endif %}
+					</nav>
+				</div>
+			</header>
+	
+
+
 		<!-- Banner -->
 			<section id="banner">
 				<img src="{% static "images/head.png" %}" alt="head" width="100%">
+				<!--<h1>Scrap Management Portal</h1>-->
 			</section>
 		<!-- One -->
 			<section id="three" class="wrapper special" style="padding-bottom: 20px;padding-top: 20px;">
@@ -31,19 +49,19 @@
 							<span class="flex flex-2">
 							<article>
 								<header>
-									<h3>Portal</h3>
+									<h3>Transaction</h3>
 								</header>
 								<footer>
-									<a href="/admin/" class="button special">Open</a>
+									<a href="/transaction" class="button special fit">Add</a>
 								</footer>
 							</article>
 
 							<article>
 								<header>
-								<h3>Logout</h3>
+								<h3>Export .xls</h3>
 								</header>
 								<footer>
-								<a href="/admin/logout" class="button special">Logout</a>
+								<a href="/export" class="button special fit">Export</a>
 								</footer>
 							</article>
 							</span>
@@ -60,7 +78,7 @@
 								<h3>Add Quote</h3>
 								</header>
 								<footer>
-								<a href="/scr/quote" class="button special">Add</a>
+								<a href="/scr/quote" class="button special fit">Add</a>
 								</footer>
 							</article>
 
@@ -69,7 +87,7 @@
 								<h3>Export .xls</h3>
 								</header>
 								<footer>
-								<a href="/scr/q" class="button special">Export</a>
+								<a href="/scr/q" class="button special fit">Export</a>
 								</footer>
 							</article>
 							</span>
@@ -84,7 +102,7 @@
 								<h3>Add Scrap</h3>
 								</header>
 								<footer>
-								<a href="/scr/add" class="button special">Add</a>
+								<a href="/scr/add" class="button special fit">Add</a>
 								</footer>
 							</article>
 							<article>
@@ -92,7 +110,7 @@
 								<h3>Export .xls</h3>
 								</header>
 								<footer>
-								<a href="/scr/success/" class="button special">Export</a>
+								<a href="/scr/success/" class="button special fit">Export</a>
 								</footer>
 							</article>
 							</span>
@@ -102,18 +120,8 @@
 				</div>
 			</section>
 			{% else %}
-			<div class="flex flex-3">
-						<article>
-							<div class="image fit">
-								<img src="{% static "images/login.png" %}" alt="login">
-							</div>
-							<header>
-								<h3>Admin Login</h3>
-							</header>
-							<footer>
-								<a href="/admin/" class="button special">Login</a>
-							</footer>
-						</article>
+			<div class="flex flex-2">
+						
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/quote.png" %}" alt="quote">
@@ -122,23 +130,21 @@
 								<h3>Add Quote</h3>
 								</header>
 								<footer>
-								<a href="/scr/quote" class="button special">Add</a>
+								<a href="/scr/quote" class="button special fit">Add</a>
 								</footer>
-							</article>
+						</article>
 						<article>
 							<div class="image fit">
 								<img src="{% static "images/scrap.png" %}" alt="scrap">
 							</div>
-							<article>
 								<header>
 								<h3>Add Scrap</h3>
 								</header>
 								<footer>
-								<a href="/scr/add" class="button special">Add</a>
+								<a href="/scr/add" class="button special fit">Add</a>
 								</footer>
-							</article>
-							</span>
 						</article>
+
 						</span>
 					</div>
 				</div>
