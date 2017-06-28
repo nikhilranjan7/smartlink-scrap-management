@@ -1,5 +1,6 @@
-from scr.models import Category, Quote, Chat_m
+from scr.models import Category, Quote, Chat_m, trxn_m
 from django import forms
+import datetime
 
 Location = (
     ('goa','Goa'),
@@ -75,6 +76,20 @@ class Quotation(forms.ModelForm):
 
 
 
+class trxn_f(forms.ModelForm):
+
+    a = datetime.datetime.now()
+    a = a.strftime("%d/%m/%y")
+    date = forms.DateField(initial=a, help_text="Date")
+    location = forms.ChoiceField(choices=Location,
+               help_text="Location of the Scrap generating Company")
+    items_description = forms.CharField(max_length=1000,help_text="Item Description", widget=forms.Textarea(attrs={'rows':'5', 'width': '100%'}))
+    purchasing_party = forms.CharField(max_length=1000, help_text="Purchasing Party")
+    selling_price = forms.CharField(max_length=1000, help_text="Price")
+
+    class Meta:
+      model = trxn_m
+      fields = ['date','location', 'items_description', 'purchasing_party','selling_price']
 
 ## Chat Bot Purpose
 

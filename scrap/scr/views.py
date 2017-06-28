@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, Quote, Chat_m
+from scr.models import Category, Quote, Chat_m, trxn_m
 from django.views.generic import FormView
-from scr.forms import MyModelForm, Quotation, Chat_f
+from scr.forms import MyModelForm, Quotation, Chat_f, trxn_f
 import os
 import threading, time
 import random
@@ -131,3 +131,18 @@ def chat(request):
             print(form.errors)
 
     return render(request, 'scr/chat.html',b)
+
+def trxn(request):
+    form = trxn_f()
+
+    if request.method == 'POST':
+        form = trxn_f(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+            return index(request)
+
+        else:
+            print(form.errors)
+
+    return render(request, 'scr/trxn.html', {'form': form})
