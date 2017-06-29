@@ -2735,7 +2735,7 @@
 			border-style: solid;
     		border-color: #1010c1;
 		}
-		
+
 
 	#header {
 		color: #d4e0ef;
@@ -2772,7 +2772,7 @@
 			top:7.5px;
 		}
 		#header .logo:hover {
-				
+
 				border-color: #ffffff;
 			}
 
@@ -2798,7 +2798,7 @@
 				border-color: #ffffff;
 			}
 
-			
+
 
 			#header a.navPanelToggle {
 				display: none;
@@ -2857,7 +2857,7 @@
 
 /* Nav */
 
-	@media screen and (max-width: 980px) {
+	@media screen and (max-width: 0px) {
 
 		#nav {
 			display: none;
@@ -2965,7 +2965,7 @@
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		text-align: center;
-		
+
 	}
 
 		#banner h1 {
