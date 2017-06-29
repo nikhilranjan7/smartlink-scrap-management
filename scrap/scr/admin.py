@@ -5,7 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 
 admin.site.register(Category)
 admin.site.register(Quote)
-
+admin.site.register(trxn_m)
 
 class Category_list(resources.ModelResource):
 
