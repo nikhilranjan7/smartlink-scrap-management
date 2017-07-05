@@ -91,12 +91,15 @@ class Chat_m(models.Model):
         return self.item
 
 class trxn_m(models.Model):
-  date = models.DateTimeField('Date Sold')
+  date = models.CharField('Date Sold',max_length=100)
   location = models.CharField(max_length=100, choices=Location,
                default='goa')
   items_description = models.CharField(max_length=10000)
   purchasing_party = models.CharField(max_length=1000)
   selling_price = models.CharField(max_length=1000)
-  
+
+  class Meta:
+      verbose_name_plural = 'Transactions'
+
   def __str__(self):
         return self.purchasing_party + ' ' + self.date
