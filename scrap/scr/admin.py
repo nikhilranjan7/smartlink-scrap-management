@@ -3,21 +3,35 @@ from scr.models import Category, Quote, trxn_m
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-admin.site.register(Category)
-admin.site.register(Quote)
-admin.site.register(trxn_m)
 
-class Category_list(resources.ModelResource):
+
+class CategorylistResource(resources.ModelResource):
 
     class Meta:
         model = Category
+        
+class CategoriesAdmin(ImportExportModelAdmin):
+    resource_class = CategorylistResource
 
-class Quote_list(resources.ModelResource):
+
+class QuotelistResource(resources.ModelResource):
 
     class Meta:
         model = Quote
+        
+class QuoteListAdmin(ImportExportModelAdmin):
+    resource_class = QuotelistResource
 
-class trx_list(resources.ModelResource):
+class trxlistResource(resources.ModelResource):
 
     class Meta:
         model = trxn_m
+
+        
+class trxListAdmin(ImportExportModelAdmin):
+    resource_class = trxlistResource        
+        
+        
+admin.site.register(Category,CategoriesAdmin)
+admin.site.register(Quote,QuotelistResource)
+admin.site.register(trxn_m,trxListAdmin)
