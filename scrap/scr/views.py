@@ -66,7 +66,7 @@ def quotes(request):
     return render(request, 'scr/quote.html', {'form': forma})
 
 def excel(request):
-    from scr.admin import Category_list
+    from scr.admin import CategorylistResource as Category_list
     dataset = Category_list().export()
     sta = os.getcwd() + '/static/xl/a.csv'
     f = open(sta,'w')
@@ -77,7 +77,7 @@ def excel(request):
     return render(request, 'scr/success.html')
 
 def exce(request):
-    from scr.admin import Quote_list
+    from scr.admin import QuotelistResource as Quote_list
     dataset = Quote_list().export()
     sta = os.getcwd() + '/static/xl/b.csv'
     f = open(sta,'w')
@@ -88,7 +88,7 @@ def exce(request):
     return render(request, 'scr/q.html')
 
 def exc(request):
-    from scr.admin import trx_list
+    from scr.admin import trxlistResource as trx_list
     dataset = trx_list().export()
     sta = os.getcwd() + '/static/xl/c.csv'
     f = open(sta,'w')
