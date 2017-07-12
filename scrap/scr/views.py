@@ -97,58 +97,6 @@ def exc(request):
     threadObj = threading.Thread(target=dela)
     threadObj.start()
     return render(request, 'scr/trx.html')
-'''
-def handler404(request):
-    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
-'''
-
-
-## Chat Bot Related
-
-GREETING_KEYWORDS = ("hello", "hi", "greetings", "sup", "what's up",)
-
-GREETING_RESPONSES = ["'sup bro", "hey", "*nods*", "hey you get my snap?"]
-
-def check_for_greeting(sentence):
-    """If any of the words in the user's input was a greeting, return a greeting response"""
-    word = sentence
-    if word.lower() in GREETING_KEYWORDS:
-        return random.choice(GREETING_RESPONSES)
-    else:
-        return ('Greet me')
-
-def chat(request):
-    form = Chat_f()
-    b = {'line':''}
-    b['form'] = form
-    if request.method == 'POST':
-        form = Chat_f(request.POST)
-        if form.is_valid():
-            a = request.POST
-            sentence = a['say']
-            url = 'https://www.cleverbot.com/getreply?key=CC2t07lcW2fy6TxXWiafkQ_aiFg&input='+sentence
-            page = ''
-            while page == '':
-                try:
-                    page = requests.get(url)
-                except:
-                    print("Connection refused by the server..")
-                    print("Let me sleep for 5 seconds")
-                    print("ZZzzzz...")
-                    time.sleep(5)
-                    print("Was a nice sleep, now let me continue...")
-                    continue
-            r = page
-            b['line'] = r.json()['output']
-            form.save(commit=True)
-            return render(request, 'scr/chat.html',b)
-
-        else:
-            print(form.errors)
-
-    return render(request, 'scr/chat.html',b)
 
 def trxn(request):
     form = trxn_f()

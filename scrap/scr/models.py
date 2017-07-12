@@ -83,13 +83,6 @@ class Quote(models.Model):
   def __str__(self):
       return self.item
 
-
-class Chat_m(models.Model):
-    say = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.item
-
 class trxn_m(models.Model):
   date = models.CharField('Date Sold',max_length=100)
   location = models.CharField(max_length=100, choices=Location,

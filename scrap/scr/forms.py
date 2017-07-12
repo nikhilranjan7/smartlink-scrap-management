@@ -77,7 +77,7 @@ class Quotation(forms.ModelForm):
 
 
 class trxn_f(forms.ModelForm):
-    
+
     date = forms.DateField(initial=datetime.date.today, help_text="Date")
     location = forms.ChoiceField(choices=Location,
                help_text="Location of the Scrap generating Company")
@@ -88,13 +88,3 @@ class trxn_f(forms.ModelForm):
     class Meta:
       model = trxn_m
       fields = ['date','location', 'items_description', 'purchasing_party','selling_price']
-
-## Chat Bot Purpose
-
-
-class Chat_f(forms.ModelForm):
-    say = forms.CharField(max_length=100,required=True,help_text="Say Anything")
-
-    class Meta:
-        model = Chat_m
-        fields = ['say']
