@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from scr.models import Category, Quote, Chat_m, trxn_m
+from scr.models import Category, Quote, trxn_m
 from django.views.generic import FormView
-from scr.forms import MyModelForm, Quotation, Chat_f, trxn_f
+from scr.forms import MyModelForm, Quotation, trxn_f
 import os
 import threading, time
 import random
