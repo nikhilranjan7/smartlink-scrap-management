@@ -1,4 +1,4 @@
-from scr.models import Category, Quote, Chat_m, trxn_m
+from scr.models import Category, Quote, trxn_m
 from django import forms
 import datetime
 
