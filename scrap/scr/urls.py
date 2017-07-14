@@ -7,7 +7,7 @@ urlpatterns = [
 	url(r'^quote/$', views.quotes, name='quota'),
     url(r'^success/$', views.excel, name='exa'),
     url(r'^q/$', views.exce, name='exe'),
-    url(r'^chat/$', views.chat, name='chat'),
+  
     url(r'^trxn/$', views.trxn, name='trxn'),
     url(r'^trx/$', views.exc, name='trx'),
 ]
